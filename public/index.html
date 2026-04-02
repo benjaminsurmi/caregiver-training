@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First Thing You Say | Caregiver Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #FAF8F5;
+  --sf: #F5F2EE;
+  --mbg: #FFF;
+  --mbr: #E8E4DF;
+  --mt: #2C2C2C;
+  --lbg: #3B6B5E;
+  --lt: #FFF;
+  --lm: #8B7E6E;
+  --ll: #3B6B5E;
+  --ibg: #FFF;
+  --ib: #D6D0C8;
+  --it: #2C2C2C;
+  --ip: #A09888;
+  --bb: #3B6B5E;
+  --bt: #FFF;
+  --bh: #2D5349;
+  --ht: #2C2C2C;
+  --hs: #6B6358;
+  --ey: #8B7E6E;
+  --ab: #E8E4DF;
+  --at: #6B6358;
+  --alb: #3B6B5E;
+  --alt: #FFF;
+  --dt: #8B7E6E;
+  --pt: #E8E4DF;
+  --pf: #3B6B5E;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A1A18;
+    --sf: #222220;
+    --mbg: #2A2A27;
+    --mbr: #3A3A36;
+    --mt: #E8E4DF;
+    --lbg: #3B6B5E;
+    --lt: #FFF;
+    --lm: #9B9484;
+    --ll: #6BAF9E;
+    --ibg: #2A2A27;
+    --ib: #3A3A36;
+    --it: #E8E4DF;
+    --ip: #6B6358;
+    --bb: #3B6B5E;
+    --bt: #FFF;
+    --bh: #4D8575;
+    --ht: #E8E4DF;
+    --hs: #9B9484;
+    --ey: #9B9484;
+    --ab: #3A3A36;
+    --at: #9B9484;
+    --alb: #3B6B5E;
+    --alt: #FFF;
+    --dt: #9B9484;
+    --pt: #3A3A36;
+    --pf: #4D8575;
+  }
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.prog { height: 3px; background: var(--pt); }
+.prog-f { height: 100%; background: var(--pf); transition: width 0.6s ease; }
+
+.msgs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px 12px;
+  scroll-behavior: smooth;
+}
+
+.hdr {
+  text-align: center;
+  padding: 36px 20px 20px;
+  animation: fsl 0.4s ease-out forwards;
+}
+.hdr-ey {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ey);
+  margin-bottom: 12px;
+}
+.hdr-t {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--ht);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.hdr-s {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--hs);
+  line-height: 1.5;
+}
+
+.row { margin-bottom: 6px; display: flex; }
+.row-m { justify-content: flex-start; padding-right: 48px; }
+.row-l { justify-content: flex-end; padding-left: 52px; }
+.inner { display: flex; align-items: flex-start; gap: 10px; max-width: 88%; }
+.inner-l { flex-direction: row-reverse; }
+.col { display: flex; flex-direction: column; min-width: 0; }
+
+.av {
+  width: 30px; height: 30px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; flex-shrink: 0;
+}
+.av-m { background: var(--ab); color: var(--at); }
+.av-l { background: var(--alb); color: var(--alt); }
+
+.lbl {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.lbl-m { color: var(--lm); }
+.lbl-l { color: var(--ll); text-align: right; }
+
+.bub {
+  padding: 12px 16px; border-radius: 18px;
+  line-height: 1.55; font-size: 15px; word-wrap: break-word;
+}
+.bub-m {
+  background: var(--mbg); color: var(--mt);
+  border: 1px solid var(--mbr);
+  border-radius: 18px 18px 18px 4px;
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+.bub-m p { margin-top: 0; }
+.bub-m p + p { margin-top: 10px; }
+.bub-l {
+  background: var(--lbg); color: var(--lt);
+  border-radius: 18px 18px 4px 18px;
+}
+
+.inp {
+  padding: 10px 16px 20px;
+  background: var(--sf);
+  border-top: 1px solid var(--mbr);
+  display: flex; gap: 10px; align-items: flex-end;
+}
+.inp textarea {
+  flex: 1; background: var(--ibg); color: var(--it);
+  border: 1.5px solid var(--ib); border-radius: 20px;
+  padding: 11px 18px; font-family: 'DM Sans', sans-serif;
+  font-size: 15px; line-height: 1.4; resize: none;
+  outline: none; min-height: 44px; max-height: 120px;
+}
+.inp textarea::placeholder { color: var(--ip); }
+.inp textarea:focus { border-color: var(--bb); }
+
+.sbtn {
+  background: var(--bb); color: var(--bt); border: none;
+  border-radius: 50%; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; transition: background 0.2s;
+}
+.sbtn:hover:not(:disabled) { background: var(--bh); }
+.sbtn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.typing { display: flex; align-items: center; gap: 6px; padding: 12px 0; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--dt); animation: bnc 1.2s infinite ease-in-out;
+}
+
+.done-b {
+  text-align: center; padding: 24px 20px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px; color: var(--hs); font-style: italic;
+}
+
+@keyframes bnc {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-7px); opacity: 1; }
+}
+@keyframes fsl {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fsl 0.3s ease-out forwards; }
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+  <div class="prog"><div class="prog-f" id="progFill" style="width:11%"></div></div>
+  <div class="msgs" id="msgs">
+    <div class="hdr" id="header">
+      <div class="hdr-ey">Caregiver Learning</div>
+      <h1 class="hdr-t">The First Thing You Say</h1>
+      <p class="hdr-s">Why the moment you walk through the door changes everything</p>
+    </div>
+  </div>
+  <div class="inp" id="inputArea">
+    <textarea id="userInput" placeholder="Type your response\u2026" rows="1" disabled></textarea>
+    <button class="sbtn" id="sendBtn" disabled>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ── State ──
+  var apiHistory = [];
+  var currentPhase = "welcome";
+  var isTyping = false;
+  var isDone = false;
+  var headerVisible = true;
+  var lastRole = null;
+
+  var phases = ["welcome","analogy","bridge","wrong_way","right_way","dementia_note","scenario_1","scenario_2","wrapup"];
+
+  // ── DOM refs ──
+  var msgsEl = document.getElementById("msgs");
+  var inputEl = document.getElementById("userInput");
+  var sendBtn = document.getElementById("sendBtn");
+  var progFill = document.getElementById("progFill");
+  var headerEl = document.getElementById("header");
+  var inputArea = document.getElementById("inputArea");
+
+  // ── System prompt ──
+  var LESSON_PLAN = [
+    "You are a warm, experienced caregiver mentor guiding a learner through a training conversation about how to enter a resident's room. You speak like a trusted coworker \u2014 never preachy, clinical, or condescending. You use 'you' and 'we' naturally. You draw insights out through questions and reflection rather than lecturing.",
+    "",
+    "The single skill being taught: When you walk into a resident's room, the first thing out of your mouth should tell the person 'I'm here for you' \u2014 not 'I'm here for a task.' Caregivers should knock, wait to be invited in, and then greet the person with warmth and genuine presence before ever mentioning showers, meals, dressing, or any care task.",
+    "",
+    "For dementia care specifically: Avoid asking 'How are you doing?' because it asks the person to assess their own state, which can pull them into confusion or negativity. Instead, bring the positive in \u2014 give warmth rather than asking them to find it.",
+    "",
+    "You will guide the learner through this lesson as a CONVERSATION. The learner types freely and you respond naturally. You move through the following phases IN ORDER. Do not skip ahead. Do not rush. Each phase should feel like a natural back-and-forth \u2014 ask a question, respond to what they say, then transition to the next phase. Keep each response to 2-5 sentences.",
+    "",
+    "IMPORTANT: After EACH of your responses, include a phase tag on its own final line in this exact format: [PHASE:current_phase_name]",
+    "The phase names are: welcome, analogy, bridge, wrong_way, right_way, dementia_note, scenario_1, scenario_2, wrapup",
+    "",
+    "PHASE GUIDE:",
+    "",
+    "1. WELCOME (phase: welcome) \u2014 Your very first message (no learner input yet):",
+    "\"Hey \u2014 it's great to have you here today. I hear we're going to spend some time together talking about one of the most important parts of providing care to someone. It's something that seems simple, but it changes everything. Ready to jump in?\"",
+    "Wait for the learner to respond, then move to the analogy.",
+    "",
+    "2. EVERYDAY ANALOGY (phase: analogy) \u2014 Set up the neighbor/eggs scenario:",
+    "\"Imagine you run out of eggs on a Sunday morning. You walk over to your neighbor's house and knock on the door. They open up. What's the first thing you say?\"",
+    "Let them answer. If they greet warmly: affirm \u2014 that little moment says 'you matter to me as a person, not just as a source of eggs.' If they jump to the ask: gently note that in real life, most of us instinctively connect first. Either way, draw out the insight that we naturally lead with connection.",
+    "Then transition to the bridge.",
+    "",
+    "3. BRIDGE TO CAREGIVING (phase: bridge) \u2014",
+    "\"Every time you walk into a resident's room, you're the neighbor at the door. And the person in that room? They're not a task on your list. They're a human being \u2014 in their home \u2014 and you're the visitor.\"",
+    "Let them react. Affirm, then transition to showing the wrong way.",
+    "",
+    "4. THE WRONG WAY (phase: wrong_way) \u2014",
+    "Give examples of task-first entries: 'Margaret, it's time for your shower' or 'I need to get you up, breakfast is almost over.' Ask what Margaret just heard. Coach based on their answer \u2014 she heard she's secondary to the task. Then transition to the right way.",
+    "",
+    "5. THE RIGHT WAY (phase: right_way) \u2014",
+    "Model it: knock, wait, enter with warmth. 'Margaret! I'm so glad to see you.' Notice her space. Sit down. The shower will happen, but inside a relationship, not instead of one. Also address 'but I'm running behind' \u2014 those 30 seconds of connection actually save time because the person is more cooperative when they feel safe. Get the learner's reaction, then transition to the dementia note.",
+    "",
+    "6. DEMENTIA NOTE (phase: dementia_note) \u2014",
+    "Explain why 'How are you doing?' can be harmful with dementia \u2014 it asks the person to assess their own state, pulling them into confusion or negativity. Instead, bring positivity in: 'I'm so glad to see you!' Then watch, read body language, gently touch their shoulder, let the moment breathe. Get their reaction, then transition to practice.",
+    "",
+    "7. SCENARIO 1 \u2014 DOROTHY (phase: scenario_1) \u2014",
+    "\"Let's put this into action. Here's your first scenario:\"",
+    "\"Dorothy is 82. She's sitting in her recliner by the window, watching the birds outside. She loves talking about her garden back home. You're there to help her get ready for lunch. You knock. She says 'come in.' You open the door and step inside. What's the first thing you say?\"",
+    "",
+    "EVALUATION for Dorothy:",
+    "- GREAT: Leads with genuine warmth/connection. Does NOT mention lunch. Notices something (birds, window, garden). If great, celebrate with feeling, then include [PASS_1] on its own line before the phase tag.",
+    "- OKAY: Friendly but generic ('Hi, how are you?'). Coach them to go further \u2014 meet Dorothy where she is.",
+    "- TASK-FIRST: Mentions lunch. Redirect warmly: 'Dorothy was watching the birds, and the first thing she heard was lunch. Let's try again.'",
+    "- After 3 weak attempts, model a great example and ask them to try once more. On 4th+ attempt, be generous \u2014 if they show genuine warmth, give [PASS_1].",
+    "",
+    "Once they pass, transition: 'Now let's try a different situation \u2014 this one has an extra layer.'",
+    "",
+    "8. SCENARIO 2 \u2014 ROBERT (phase: scenario_2) \u2014",
+    "\"Robert is 78. He has moderate dementia. He's sitting on the edge of his bed in pajamas, looking a little confused. You need to help him get dressed. He looks up at you when you enter. What do you do and say first?\"",
+    "",
+    "EVALUATION for Robert:",
+    "- GREAT: Leads with warmth. Does NOT mention dressing. Does NOT ask 'how are you feeling/doing?' Brings the positive in. Bonus: uses touch/body language. If great, celebrate, then include [PASS_2] on its own line before the phase tag.",
+    "- OKAY: Generic greeting. Coach further.",
+    "- TASK-FIRST: Mentions dressing. Redirect.",
+    "- DEMENTIA CAUTION: If they ask 'how are you feeling/doing?' \u2014 explain why this pulls someone with dementia into confusion. Coach them to bring warmth in instead.",
+    "- After 3 weak attempts, model and ask for one more. On 4th+ be generous. Give [PASS_2].",
+    "",
+    "Once they pass, transition to wrapup.",
+    "",
+    "9. WRAPUP (phase: wrapup) \u2014",
+    "\"Every person you walk in on today \u2014 knock, wait, and when you go through that door, leave the task list outside. The first words out of your mouth should say one thing: I'm here for you. Go out and practice today. Try it on every single room you walk into. And when you come back, I want to hear how it went.\"",
+    "",
+    "TONE REMINDERS:",
+    "- Warm, conversational, not preachy",
+    "- Celebrates good responses with real feeling: 'Do you know how powerful that is?'",
+    "- Redirects gently: 'That's friendly \u2014 but you can go further.'",
+    "- Never condescending",
+    "- Keep each response to 2-5 sentences. This is a conversation, not a lecture."
+  ].join("\n");
+
+  // ── API call ──
+  async function callAPI(messages) {
+    var resp = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: messages, system: LESSON_PLAN }),
+    });
+    if (!resp.ok) throw new Error("API error " + resp.status);
+    var data = await resp.json();
+    if (data.error) throw new Error(data.error.message || "API error");
+    var text = "";
+    for (var i = 0; i < data.content.length; i++) {
+      if (data.content[i].type === "text") text += data.content[i].text;
+    }
+    return text;
+  }
+
+  // ── Parse response ──
+  function parseResponse(raw) {
+    var phaseMatch = raw.match(/\[PHASE:(\w+)\]/);
+    var phase = phaseMatch ? phaseMatch[1] : null;
+    var clean = raw
+      .replace(/\[PHASE:\w+\]/g, "")
+      .replace(/\[PASS_1\]/g, "")
+      .replace(/\[PASS_2\]/g, "")
+      .trim();
+    return { text: clean, phase: phase };
+  }
+
+  // ── Update progress ──
+  function updateProgress() {
+    var idx = phases.indexOf(currentPhase);
+    var pct = Math.round(((idx + 1) / phases.length) * 100);
+    progFill.style.width = pct + "%";
+  }
+
+  // ── Render messages ──
+  function addMentorBubble(text) {
+    var isFirst = lastRole !== "mentor";
+    lastRole = "mentor";
+
+    var row = document.createElement("div");
+    row.className = "row row-m fade-in";
+
+    var inner = document.createElement("div");
+    inner.className = "inner inner-m";
+
+    var av = document.createElement("div");
+    av.className = "av av-m";
+    av.textContent = "M";
+
+    var col = document.createElement("div");
+    col.className = "col";
+
+    if (isFirst) {
+      var lbl = document.createElement("div");
+      lbl.className = "lbl lbl-m";
+      lbl.textContent = "MENTOR";
+      col.appendChild(lbl);
+    }
+
+    var bub = document.createElement("div");
+    bub.className = "bub bub-m";
+    var paragraphs = text.split("\n").filter(function(s) { return s.trim(); });
+    for (var i = 0; i < paragraphs.length; i++) {
+      var p = document.createElement("p");
+      p.textContent = paragraphs[i];
+      bub.appendChild(p);
+    }
+    col.appendChild(bub);
+    inner.appendChild(av);
+    inner.appendChild(col);
+    row.appendChild(inner);
+    msgsEl.appendChild(row);
+    scrollToBottom();
+  }
+
+  function addLearnerBubble(text) {
+    var isFirst = lastRole !== "learner";
+    lastRole = "learner";
+
+    var row = document.createElement("div");
+    row.className = "row row-l fade-in";
+
+    var inner = document.createElement("div");
+    inner.className = "inner inner-l";
+
+    var av = document.createElement("div");
+    av.className = "av av-l";
+    av.textContent = "Y";
+
+    var col = document.createElement("div");
+    col.className = "col";
+    col.style.alignItems = "flex-end";
+
+    if (isFirst) {
+      var lbl = document.createElement("div");
+      lbl.className = "lbl lbl-l";
+      lbl.textContent = "YOU";
+      col.appendChild(lbl);
+    }
+
+    var bub = document.createElement("div");
+    bub.className = "bub bub-l";
+    bub.textContent = text;
+    col.appendChild(bub);
+    inner.appendChild(col);
+    inner.appendChild(av);
+    row.appendChild(inner);
+    msgsEl.appendChild(row);
+    scrollToBottom();
+  }
+
+  function showTyping() {
+    var el = document.createElement("div");
+    el.className = "typing";
+    el.id = "typingIndicator";
+
+    var av = document.createElement("div");
+    av.className = "av av-m";
+    av.textContent = "M";
+    el.appendChild(av);
+
+    var dots = document.createElement("div");
+    dots.style.display = "flex";
+    dots.style.gap = "5px";
+    for (var i = 0; i < 3; i++) {
+      var d = document.createElement("div");
+      d.className = "dot";
+      d.style.animationDelay = (i * 0.18) + "s";
+      dots.appendChild(d);
+    }
+    el.appendChild(dots);
+    msgsEl.appendChild(el);
+    scrollToBottom();
+  }
+
+  function hideTyping() {
+    var el = document.getElementById("typingIndicator");
+    if (el) el.remove();
+  }
+
+  function showDone() {
+    var el = document.createElement("div");
+    el.className = "done-b fade-in";
+    el.textContent = "\u2728 Training complete \u2014 now go make someone's day.";
+    msgsEl.appendChild(el);
+    inputArea.style.display = "none";
+    scrollToBottom();
+  }
+
+  function scrollToBottom() {
+    setTimeout(function() { msgsEl.scrollTop = msgsEl.scrollHeight; }, 60);
+  }
+
+  function setInputEnabled(enabled) {
+    inputEl.disabled = !enabled;
+    sendBtn.disabled = !enabled;
+    if (enabled) inputEl.focus();
+  }
+
+  // ── Send message ──
+  async function handleSend() {
+    var text = inputEl.value.trim();
+    if (!text || isTyping || isDone) return;
+
+    inputEl.value = "";
+    isTyping = true;
+    setInputEnabled(false);
+
+    // Hide header on first message
+    if (headerVisible) {
+      headerVisible = false;
+      if (headerEl) headerEl.style.display = "none";
+    }
+
+    addLearnerBubble(text);
+    apiHistory.push({ role: "user", content: text });
+    showTyping();
+
+    try {
+      var raw = await callAPI(apiHistory);
+      hideTyping();
+
+      var parsed = parseResponse(raw);
+      if (parsed.phase) {
+        currentPhase = parsed.phase;
+        updateProgress();
+      }
+
+      apiHistory.push({ role: "assistant", content: raw });
+      addMentorBubble(parsed.text);
+
+      if (parsed.phase === "wrapup") {
+        isDone = true;
+        showDone();
+        return;
+      }
+    } catch (err) {
+      hideTyping();
+      addMentorBubble("Hmm, I had a little trouble there \u2014 say that again for me?");
+    }
+
+    isTyping = false;
+    setInputEnabled(true);
+  }
+
+  // ── Event listeners ──
+  sendBtn.addEventListener("click", handleSend);
+  inputEl.addEventListener("keydown", function(e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  });
+
+  // Update send button state on input
+  inputEl.addEventListener("input", function() {
+    sendBtn.disabled = !inputEl.value.trim() || isTyping;
+  });
+
+  // ── Initialize ──
+  async function init() {
+    isTyping = true;
+    showTyping();
+
+    var initMsg = [{ role: "user", content: "[SYSTEM: The learner has just arrived. Send your welcome message to begin the lesson.]" }];
+    try {
+      var raw = await callAPI(initMsg);
+      hideTyping();
+
+      var parsed = parseResponse(raw);
+      if (parsed.phase) {
+        currentPhase = parsed.phase;
+        updateProgress();
+      }
+
+      apiHistory.push(initMsg[0]);
+      apiHistory.push({ role: "assistant", content: raw });
+      addMentorBubble(parsed.text);
+    } catch (err) {
+      hideTyping();
+      addMentorBubble("Hey \u2014 it's great to have you here today. I hear we're going to spend some time together talking about one of the most important parts of providing care to someone. It's something that seems simple, but it changes everything. Ready to jump in?");
+      apiHistory.push(initMsg[0]);
+      apiHistory.push({ role: "assistant", content: "Hey \u2014 it's great to have you here today. I hear we're going to spend some time together talking about one of the most important parts of providing care to someone. It's something that seems simple, but it changes everything. Ready to jump in?\n\n[PHASE:welcome]" });
+    }
+
+    isTyping = false;
+    setInputEnabled(true);
+  }
+
+  init();
+})();
+</script>
+
+</body>
+</html>
